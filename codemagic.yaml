@@ -1,0 +1,27 @@
+workflows:
+  aegis-nuclear-build:
+    name: AEGIS Nuclear Build
+    max_build_duration: 30
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      vars:
+        APP_NAME: "AEGIS Nuclear"
+        APP_ID: "com.aegis.nuclear"
+    scripts:
+      - name: Get dependencies
+        script: flutter packages pub get
+      - name: Build APK
+        script: flutter build apk --debug --split-per-abi
+    artifacts:
+      - build/app/outputs/flutter-apk/app-armeabi-v7a-debug.apk
+      - build/app/outputs/flutter-apk/app-arm64-v8a-debug.apk
+      - build/app/outputs/flutter-apk/app-x86_64-debug.apk
+      - build/app/outputs/flutter-apk/*.apk
+    publishing:
+      email:
+        recipients:
+          - email@example.com
+      artifacts:
+        enabled: true
