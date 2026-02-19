@@ -13,15 +13,13 @@ workflows:
       - name: Get dependencies
         script: flutter packages pub get
       - name: Build APK
-        script: flutter build apk --debug --split-per-abi
+        script: flutter build apk --release --split-per-abi
     artifacts:
-      - build/app/outputs/flutter-apk/app-armeabi-v7a-debug.apk
-      - build/app/outputs/flutter-apk/app-arm64-v8a-debug.apk
-      - build/app/outputs/flutter-apk/app-x86_64-debug.apk
+      - build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk
+      - build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
+      - build/app/outputs/flutter-apk/app-x86_64-release.apk
       - build/app/outputs/flutter-apk/*.apk
     publishing:
       email:
         recipients:
-          - email@example.com
-      artifacts:
-        enabled: true
+          - gibrandwisatrio1305@gmail.com
